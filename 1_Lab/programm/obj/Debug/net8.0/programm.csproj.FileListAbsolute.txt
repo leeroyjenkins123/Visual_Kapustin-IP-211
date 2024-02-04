@@ -1,0 +1,15 @@
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\bin\Debug\net8.0\programm.exe
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\bin\Debug\net8.0\programm.deps.json
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\bin\Debug\net8.0\programm.runtimeconfig.json
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\bin\Debug\net8.0\programm.dll
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\bin\Debug\net8.0\programm.pdb
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.GeneratedMSBuildEditorConfig.editorconfig
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.AssemblyInfoInputs.cache
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.AssemblyInfo.cs
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.csproj.CoreCompileInputs.cache
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.sourcelink.json
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.dll
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\refint\programm.dll
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.pdb
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\programm.genruntimeconfig.cache
+D:\123\4_course\Visual_Kapustin-IP-211\1_Lab\programm\obj\Debug\net8.0\ref\programm.dll
