@@ -17,14 +17,14 @@ public class Account
         _notifyers = new List<INotifyer>();
     }
 
-    public void AddNotifyer(INotifyer notifyer)
+    public void AddNotifyer(in INotifyer notifyer)
     {
         _notifyers.Add(notifyer);
     }
 
     public void ChangeBalance(in decimal value)
     {
-        _balance = value;
+        this._balance = value;
         Notification();
     }
 
@@ -44,7 +44,7 @@ public class Account
 
 public interface INotifyer
 {
-    public void Notify(decimal balance);
+    void Notify(in decimal balance);
 }
 
 public class SMSLowBalanceNotifyer : INotifyer
@@ -58,7 +58,7 @@ public class SMSLowBalanceNotifyer : INotifyer
         _lowBalanceValue = lowBalanceValue;
     }
 
-    public void Notify(decimal balance)
+    public void Notify(in decimal balance)
     {
         if (balance < _lowBalanceValue)
         {
@@ -71,12 +71,12 @@ public class EMailBalanceChangedNotifyer : INotifyer
 {
     private string _email;
 
-    public EMailBalanceChangedNotifyer(string email)
+    public EMailBalanceChangedNotifyer(in string email)
     {
-        _email = email;
+        this._email = email;
     }
 
-    public void Notify(decimal balance)
+    public void Notify(in decimal balance)
     {
         Console.WriteLine($"Called from a class: {this.GetType().Name}. {_email}: new balance: {balance}");
     }
