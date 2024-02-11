@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="program.MainWindow"
+        Title="program"
+        MinWidth="300"
+        MinHeight="300" 
+        Width="600"
+        Height="400">
+    <Grid ColumnDefinitions="0.3*, 0.001*, 0.6*">
+        
+        <StackPanel>
+                <Button Click="ClickHandler" Name="buttonKhaki" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="Khaki" Content="Khaki"></Button>
+                <Button Click="ClickHandler" Name="buttonRed" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="Red" Content="Red"></Button>
+                <Button Click="ClickHandler" Name="buttonMediumVioletRed" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="MediumVioletRed" Content="MediumVioletRed"></Button>
+                <Button Click="ClickHandler" Name="buttonBisque" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="Bisque" Content="Bisque"></Button>
+                <Button Click="ClickHandler" Name="buttonLemonChiffon" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="LemonChiffon" Content="LemonChiffon"></Button>
+                <Button Click="ClickHandler" Name="buttonPowderBlue" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="PowderBlue" Content="PowderBlue"></Button>
+                <Button Click="ClickHandler" Name="buttonMintCream" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="MintCream" Content="MintCream"></Button>
+                <Button Click="ClickHandler" Name="buttonMaroon" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="Maroon" Content="Maroon"></Button>
+                <Button Click="ClickHandler" Name="buttonRosyBrown" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="RosyBrown" Content="RosyBrown"></Button>
+                <Button Click="ClickHandler" Name="buttonLightPink" Foreground="Black" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Black" Background="LightPink" Content="LightPink"></Button>
+        </StackPanel>
+        <GridSplitter Grid.Column="1" Background="Black"></GridSplitter>
+        <Rectangle Name="_rect" Grid.Column="2" Fill="Khaki"></Rectangle>
+    </Grid>
+    
+</Window>
