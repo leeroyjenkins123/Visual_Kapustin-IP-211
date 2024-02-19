@@ -1,0 +1,100 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:calc ="clr-namespace:Program"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="program.MainWindow"
+        x:DataType="calc:Calculator"
+        Height="450"
+        Width="400"
+        Title="program">
+
+        <Design.DataContext>
+                <calc:Calculator></calc:Calculator>
+        </Design.DataContext>
+
+        <Window.Styles>
+                <Style Selector="Button">
+                <Setter Property="Background" Value="Gray"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                <Setter Property="FontSize" Value="30"></Setter>
+                <Setter Property="CornerRadius" Value="10"></Setter>
+                <Setter Property="Margin" Value="2"></Setter>
+                <Setter Property="BorderThickness" Value="2"></Setter>
+                <Setter Property="Foreground" Value="Black"></Setter>
+                </Style>  
+        </Window.Styles>
+
+        <Grid RowDefinitions="auto,auto,auto" Background="DimGray">
+                <Grid Grid.Row="0" RowDefinitions="*, auto" Background="Silver" Height="100">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,auto,auto">
+                                <TextBlock Grid.Column="0" Grid.Row="0" TextAlignment="Right" Foreground="Black" FontSize="30" Name="FirstOperand" Text="{Binding FOperand}"></TextBlock>
+                                <TextBlock Grid.Column="1" Grid.Row="0" TextAlignment="Justify" Foreground="Black" FontSize="30" Name="Operation" Text="{Binding Operation}"></TextBlock>
+                                <TextBlock Grid.Column="2" Grid.Row="0" TextAlignment="Justify" Foreground="Black" FontSize="30" Name="SecondOperand" Text="{Binding SOperand}"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                                <TextBlock TextAlignment="Right" FontSize="30" FontStyle="Normal" Foreground="Black" Name="Result" Text="{Binding Result}"></TextBlock>  
+                        </Grid>        
+                </Grid>   
+                <Grid Grid.Row="1">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Command="{Binding TwoCommandAdd}" CommandParameter="^">a^b</Button>
+                                <Button Command="{Binding ClearAll}" CommandParameter="CE">CE</Button>
+                                <Button Command="{Binding ClearLast}" CommandParameter="Del">Del</Button>
+                        </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="*,*,*,*,*">
+                        <Grid Grid.Column="0">
+                                <StackPanel Orientation="Vertical">
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="mod">mod</Button>
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="ceil">ceil</Button>
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="floor">floor</Button>
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="lg">lg</Button>
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="ln">ln</Button>          
+                                </StackPanel>        
+                        </Grid>
+                        <Grid Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="sin">sin</Button>  
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="7">7</Button>
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="4">4</Button>
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="1">1</Button>
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="!">n!</Button>          
+                                </StackPanel>        
+                        </Grid>
+                        <Grid Grid.Column="2">
+                                <StackPanel Orientation="Vertical">
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="cos">cos</Button>  
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="8">8</Button>
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="5">5</Button>
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="2">2</Button>
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="0">0</Button>          
+                                </StackPanel>       
+                        </Grid>
+                        <Grid Grid.Column="3">
+                                <StackPanel Orientation="Vertical">
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="tan">tan</Button>  
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="9">9</Button>
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="6">6</Button>
+                                        <Button Command="{Binding NumberAdd}" CommandParameter="3">3</Button>      
+                                        <Button Command="{Binding CommaAdd}" CommandParameter="comma">,</Button>    
+                                </StackPanel>       
+                        </Grid>
+                        <Grid Grid.Column="4">
+                                <StackPanel Orientation="Vertical">
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="/">/</Button>  
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="*">*</Button>
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="-">-</Button>
+                                        <Button Command="{Binding CommandAdd}" CommandParameter="+">+</Button>      
+                                        <Button Command="{Binding EqualAdd}" CommandParameter="=">=</Button>    
+                                </StackPanel>       
+                        </Grid>
+                        
+                        
+                </Grid>     
+        </Grid>
+
+
+</Window>
