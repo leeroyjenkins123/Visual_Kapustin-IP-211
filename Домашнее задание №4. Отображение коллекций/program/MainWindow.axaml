@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:program"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="program.MainWindow"
+        Width="700"
+        Height="500"
+        Title="program"
+        x:DataType="local:FileExplorer">
+    
+         <Window.DataContext>
+            <local:FileExplorer/>
+        </Window.DataContext>
+
+        <Window.Resources>
+            <local:FileImage x:Key="Image"/>
+        </Window.Resources>
+
+        <Grid RowDefinitions="auto, *">
+            <ListBox Grid.Row="0" DoubleTapped="PrevDoubleTap">
+                <TextBlock  Text="..."/>
+            </ListBox>
+            <ListBox Grid.Row="1" DoubleTapped="DoubleTap" ItemsSource="{Binding Directories}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="auto, auto">
+                            <Image Width="20" Height="20" Source="{Binding ., Converter={StaticResource Image}}"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Name}"/>   
+                        </Grid> 
+                    </DataTemplate>
+                  </ListBox.ItemTemplate>    
+            </ListBox>
+            
+        </Grid>
+
+</Window>
