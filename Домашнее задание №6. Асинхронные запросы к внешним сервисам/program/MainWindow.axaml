@@ -1,0 +1,82 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local = "clr-namespace:program"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="program.MainWindow"
+        x:DataType="local:WeatherLogic"
+        Width="450"
+        Height="700"
+        Title="program">
+    <Window.DataContext>
+		<local:WeatherLogic/>
+	</Window.DataContext>
+
+    <Grid Background="{Binding Theme}" RowDefinitions="auto,auto,auto,auto,*">
+        
+        <Grid Grid.Row="0" Margin="10">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" TextAlignment="Center" Text="{Binding Date}"/>   
+        </Grid>
+
+        <Grid Grid.Row="1" ColumnDefinitions="auto,*">
+                <TextBox MinWidth="300" Grid.Column="0" Background="{Binding Theme}" BorderBrush="Black" BorderThickness="2" Foreground="White" Name="InputForm" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" CornerRadius="20" ></TextBox>
+                <Button Grid.Column="1" FontSize="30" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Click="GetForecastButton" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >Search</Button>
+        </Grid>
+
+        <Grid Grid.Row="2" ColumnDefinitions="*,*">
+            <StackPanel Margin="15" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Column="0">
+                <TextBlock TextAlignment="Center" FontSize="40" Foreground="White" Text="{Binding DataResponce.Main.Temp}"/>
+                <TextBlock TextAlignment="Center" FontSize="40" Foreground="White">°</TextBlock>
+            </StackPanel>
+            <Image Grid.Column="1" HorizontalAlignment="Center" Width="160" Height="160" Source="{Binding WeatherIcon}" />
+        </Grid>
+
+        <Grid Grid.Row="3" ColumnDefinitions="*,*,*">
+            <StackPanel Grid.Column="0">
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" >Humidity</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="25" TextAlignment="Center" Foreground="White" Text="{Binding DataResponce.Main.Humidity}"/>
+                    <TextBlock FontSize="25" TextAlignment="Center" Foreground="White">%</TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" >Wind</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="25" TextAlignment="Center" Foreground="White" Text="{Binding DataResponce.Wind.Speed}"/>
+                    <TextBlock FontSize="25" TextAlignment="Center" Foreground="White">m/s</TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="White" >Pressure</TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock FontSize="25" TextAlignment="Center" Foreground="White" Text="{Binding Pressure}"/>
+                    <TextBlock FontSize="25" TextAlignment="Center" Foreground="White">mm</TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <ListBox BorderBrush="White" BorderThickness="3" CornerRadius="20" ItemsSource="{Binding DataResponceInfos}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid  ColumnDefinitions="*, *, *">
+                            <TextBlock FontWeight="Bold" FontSize="17" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding DT_txt}" />
+
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+								<TextBlock FontWeight="Bold" FontSize="17" TextAlignment="Center" Foreground="White" Text="Temp"></TextBlock>
+								<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+									<TextBlock FontSize="17" TextAlignment="Center" Foreground="White" Text="{Binding Main.Temp}"></TextBlock>
+									<TextBlock FontSize="17" TextAlignment="Center" Foreground="White">°</TextBlock>
+								</StackPanel>
+							</StackPanel>
+							<Image Grid.Column="2" Width="70" Height="70" Source="{Binding Icon}"></Image>
+                        </Grid>    
+                    </DataTemplate>    
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+    </Grid>
+    
+</Window>
