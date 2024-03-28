@@ -1,0 +1,76 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:program.ViewModels.Pages"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:DataGridViewModel"
+             x:Class="program.Views.Pages.DataGridView">
+             
+             
+  	 <StackPanel>
+		<DataGrid Margin="10" ItemsSource="{Binding People}" GridLinesVisibility="All" CanUserReorderColumns="True" CanUserResizeColumns="True" BorderThickness="1" BorderBrush="Gray">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Id"  Binding="{Binding Id}"/>
+				<DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}"/>
+				<DataGridTextColumn IsReadOnly="True" Header="User Name"  Binding="{Binding Username}"/>
+				<DataGridTextColumn IsReadOnly="True" Header="Email" Binding="{Binding Email}"/>
+				<DataGridTextColumn IsReadOnly="True" Header="Phone" Binding="{Binding Phone}"/>
+				<DataGridTextColumn IsReadOnly="True" Header="Website" Binding="{Binding Website}"/>
+				<DataGridTemplateColumn Header="Address">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid ColumnDefinitions="*,*,*,*,*,*">
+								<Grid Grid.Column="0" RowDefinitions="Auto,Auto">
+									<TextBlock Grid.Row="0" TextAlignment="Center">City</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Address.City}"></TextBox>
+								</Grid>
+								<Grid Grid.Column="1" RowDefinitions="Auto,Auto">
+									<TextBlock TextAlignment="Center" Grid.Row="0" VerticalAlignment="Center">Street</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Address.Street}"></TextBox>
+								</Grid>
+								<Grid  Grid.Column="2" RowDefinitions="Auto,Auto">
+									<TextBlock TextAlignment="Center" Grid.Row="0" VerticalAlignment="Center">Suite</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Address.Suite}"></TextBox>
+								</Grid>
+								<Grid  Grid.Column="3" RowDefinitions="Auto,Auto">
+									<TextBlock TextAlignment="Center" Grid.Row="0" VerticalAlignment="Center">Zipcode</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Address.Zipcode}"></TextBox>
+								</Grid>
+								<Grid Grid.Column="4" RowDefinitions="Auto,Auto">
+									<TextBlock TextAlignment="Center" Grid.Row="0" VerticalAlignment="Center">Lat</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Address.Geo.Lat}"></TextBox>
+								</Grid>
+								<Grid Grid.Column="5" RowDefinitions="Auto,Auto">
+									<TextBlock TextAlignment="Center" Grid.Row="0" VerticalAlignment="Center">Lng</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Address.Geo.Lng}"></TextBox>
+								</Grid>
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Company">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid ColumnDefinitions="Auto,Auto,Auto">
+								<Grid Grid.Column="0" RowDefinitions="Auto,Auto">
+									<TextBlock Grid.Row="0" TextAlignment="Center">Name</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Company.Name}"></TextBox>
+								</Grid>
+								<Grid Grid.Column="1" RowDefinitions="Auto,Auto">
+									<TextBlock TextAlignment="Center" Grid.Row="0" VerticalAlignment="Center">CatchPhrase</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Company.CatchPhrase}"></TextBox>
+								</Grid>
+								<Grid  Grid.Column="2" RowDefinitions="Auto,Auto">
+									<TextBlock TextAlignment="Center" Grid.Row="0" VerticalAlignment="Center">Bs</TextBlock>
+									<TextBox IsReadOnly="True" Grid.Row="1" Text="{Binding Company.Bs}"></TextBox>
+								</Grid>
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+
+	</StackPanel>
+</UserControl>
