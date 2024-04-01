@@ -1,0 +1,39 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:program"
+        x:DataType="controls:ShowSlider">
+
+        
+
+        <Design.PreviewWith>
+            <controls:ShowSlider />    
+        </Design.PreviewWith>
+        
+        <Style Selector="controls|ShowSlider">
+    <!-- Set Defaults -->
+            <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel >
+                    <Grid IsVisible="{TemplateBinding IsSliderVisible}" ColumnDefinitions="auto,*">
+                        <Button Command="{Binding CloseButtonCommand, RelativeSource={RelativeSource TemplatedParent}}" 
+                                 HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Height="70" Width="70">
+                                <Image Width="50" Height="50" Source="/Assets/volumeImage.png"></Image>
+                        </Button>
+                        <Grid Grid.Column="1" RowDefinitions="auto,*" >
+                            <TextBlock Grid.Row="0" Text="{Binding #slider.Value}"
+                                HorizontalAlignment="Center"/>
+                            <Slider Grid.Row="1" x:Name="slider" />
+                        </Grid>
+                    </Grid>
+
+                    <Button Command="{Binding OpenSliderCommand, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="{Binding !IsSliderVisible, RelativeSource={RelativeSource TemplatedParent}}" 
+                            Background="White" Height="70" Width="70">
+                        <Image Width="50" Height="50" Source="/Assets/volumeImage.png"></Image>
+                    </Button>
+                </StackPanel>
+            </ControlTemplate>
+            </Setter>
+            
+        </Style>
+
+</Styles>
